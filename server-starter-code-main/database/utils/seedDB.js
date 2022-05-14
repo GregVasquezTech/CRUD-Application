@@ -30,14 +30,16 @@ const seedDB = async () => {
 	const dummy_student = await Student.create({
 		firstname: "Joe",
         lastname: "Smith",
-	    email: 'email@email.com',
+	    email: "email@email.com",
+		image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.biography.com%2Fus-president%2Fjoe-biden&psig=AOvVaw1DxGlm1dr6WDwDWeJV6_hH&ust=1652655621632000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIjQpI6M4PcCFQAAAAAdAAAAABAD",
 	    gpa: 2.5,
 	});
 	// Create a new student for a campus
 	const dummy_student2 = await Student.create({
 		firstname: "Mary",
         lastname: "Johnson",
-		email: 'email1@email.com',
+		email: "email1@email.com",
+		image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F1%2F10%2FMary_Johnson_at_SSAcon_2015.jpg&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMary_Johnson_(writer)&tbnid=v49LPqgUEfBMVM&vet=12ahUKEwif4N3IjOD3AhWYhXIEHbcQAOgQMygAegUIARDCAQ..i&docid=gqKpc44MqnMOrM&w=3139&h=4708&q=mary%20johnson&ved=2ahUKEwif4N3IjOD3AhWYhXIEHbcQAOgQMygAegUIARDCAQ",
 		gpa: 2.5
 	});
 

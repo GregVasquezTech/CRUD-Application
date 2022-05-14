@@ -20,6 +20,10 @@ const Campus = db.define("campus", {
 
   description: {
     type: Sequelize.STRING,
+  },
+
+  image: {
+    type: Sequelize.STRING,
   }
 });
 

@@ -22,10 +22,17 @@ const Student = db.define("student", {
     allowNull: false
   },
 
+  image: {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+
   gpa: {
     type: Sequelize.FLOAT,
     allowNull: false
   }
+
+  
 
 });
 
