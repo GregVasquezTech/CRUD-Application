@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const AllCampusesView = (props) => {
-  const {allCampuses, deleteCampus} = props
+  const {campuses, deleteCampus} = props
   // If there is no campus, display a message.
   if (!props.allCampuses.length) {
     return (

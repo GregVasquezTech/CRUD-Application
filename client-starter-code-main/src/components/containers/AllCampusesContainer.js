@@ -10,7 +10,6 @@ import { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchAllCampusesThunk, deleteCampusThunk } from "../../store/thunks";
-import { deleteCampus } from "../../store/actions/actionCreators"
 import { AllCampusesView } from "../views";
 // import { Campus } from '../../../../server-starter-code-main/database/models';
 
