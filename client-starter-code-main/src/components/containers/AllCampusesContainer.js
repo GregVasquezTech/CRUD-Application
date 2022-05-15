@@ -9,8 +9,8 @@ import Header from './Header';
 import { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchAllCampusesThunk } from "../../store/thunks";
-// import { deleteCampusThunk } from '../../store/thunks';
+import { fetchAllCampusesThunk, deleteCampusThunk } from "../../store/thunks";
+import { deleteCampus } from "../../store/actions/actionCreators"
 import { AllCampusesView } from "../views";
 // import { Campus } from '../../../../server-starter-code-main/database/models';
 
@@ -48,7 +48,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchAllCampuses: () => dispatch(fetchAllCampusesThunk()),
-    // deleteCampus: (campusId) => dispatch(deleteCampusThunk(campusId))
+    deleteCampus: (campusId) => dispatch(deleteCampusThunk(campusId))
   };
 };
 
