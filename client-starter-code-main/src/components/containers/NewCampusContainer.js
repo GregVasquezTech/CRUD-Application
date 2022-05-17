@@ -40,7 +40,8 @@ class NewCampusContainer extends Component {
     let campus = {
         name: this.state.name,
         address: this.state.address,
-        description: this.state.description
+        description: this.state.description,
+        image: this.state.image
     };
     
     // Add new campus in back-end database
@@ -50,7 +51,8 @@ class NewCampusContainer extends Component {
     this.setState({
       name: "", 
       address: "", 
-      description: "", 
+      description: "",
+      image: "", 
       redirect: true, 
       redirectId: newCampus.id
     });
