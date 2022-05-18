@@ -31,7 +31,7 @@ const seedDB = async () => {
 		firstname: "Joe",
       	lastname: "Smith",
 		email: "jsmith@email.com",
-		imageUrl: "https://www.google.com/search?q=joe+smith&sxsrf=ALiCzsbhVQLP1oZUN-TxCZw4VuUvdudVWA:1652895928275&tbm=isch&source=iu&ictx=1&vet=1&fir=67mADXTLIuo8lM%252CrTWTYVqEK0pOmM%252C%252Fm%252F02pn3t0%253B1DM2REcTcwHXZM%252Cc_1vRf8bkl9w_M%252C_%253BamQ4y-3yzfxzoM%252C7zd4wN_5zeeE6M%252C_%253BxSbwc92A1X08qM%252CtT8Ql1ChPMrIwM%252C_%253B6kuY-vaxA6uGqM%252CMQZTB7X5PvboDM%252C_%253BbY3zSRitfBj7cM%252CsDtx01UT50hysM%252C_&usg=AI4_-kSd3Eu5U_0gxFtz4a3okC_hIS0CzQ&sa=X&ved=2ahUKEwiV6p6Vzen3AhVoTt8KHYa9D5IQ_B16BAhkEAE#imgrc=67mADXTLIuo8lM",
+		imageUrl: "https://img.mlbstatic.com/mlb-images/image/private/ar_16:9,g_auto,q_auto:good,w_1024,c_fill,f_jpg,dpr_3.0/mlb/qftazupjqxwkttuxwvqg",
 		gpa: 2.5
 	});
 	// Create a new student for a campus
@@ -39,7 +39,7 @@ const seedDB = async () => {
 		firstname: "Mary",
       	lastname: "Johnson",
 		email: "mjohnson@email.com",
-		imageUrl: "https://www.google.com/search?q=mary+johnson&sxsrf=ALiCzsY6coyBEKml1nil93toOksOqpU4vA:1652896034565&tbm=isch&source=iu&ictx=1&vet=1&fir=v49LPqgUEfBMVM%252CgqKpc44MqnMOrM%252C%252Fm%252F0swl95y&usg=AI4_-kRNl5q9ZGYPQ_gCtMdS6ISQ_Qeexw&sa=X&ved=2ahUKEwiXlfbHzen3AhUGneAKHQq_DvwQ_B16BAhSEAI#imgrc=v49LPqgUEfBMVM",
+		imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Mary_Johnson_at_SSAcon_2015.jpg/400px-Mary_Johnson_at_SSAcon_2015.jpg",
 		gpa: 3.5
 	});
 
