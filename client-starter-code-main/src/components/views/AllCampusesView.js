@@ -32,11 +32,11 @@ const AllCampusesView = (props) => {
             <h2>{campus.name}</h2>
           </Link>
           <h4>campus id: {campus.id}</h4>
-          <img src={campus.image} />
+          <img src={campus.imageUrl} />
           <p>{campus.address}</p>
           <p>{campus.description}</p>
           <button onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
-          <Link to={`/editCampus/${campus.id}`}>
+          <Link to={`/editcampus/${campus.id}`}>
             <button>Edit Campus</button>
           </Link>
           <hr/>

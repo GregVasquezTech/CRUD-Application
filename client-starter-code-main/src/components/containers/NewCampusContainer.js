@@ -10,7 +10,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import NewCampusView from '../views/NewStudentView';
+import NewCampusView from '../views/NewCampusView';
 import { addCampusThunk } from '../../store/thunks';
 
 class NewCampusContainer extends Component {
@@ -21,6 +21,7 @@ class NewCampusContainer extends Component {
       name: "", 
       address: "", 
       description: "", 
+      imageUrl: "",
       redirect: false, 
       redirectId: null
     };
@@ -41,7 +42,7 @@ class NewCampusContainer extends Component {
         name: this.state.name,
         address: this.state.address,
         description: this.state.description,
-        image: this.state.image
+        imageUrl: this.state.imageUrl
     };
     
     // Add new campus in back-end database
@@ -52,7 +53,7 @@ class NewCampusContainer extends Component {
       name: "", 
       address: "", 
       description: "",
-      image: "", 
+      imageUrl: "", 
       redirect: true, 
       redirectId: newCampus.id
     });

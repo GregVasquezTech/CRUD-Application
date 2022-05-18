@@ -20,7 +20,7 @@ class NewStudentContainer extends Component {
     this.state = {
       firstname: "", 
       lastname: "",
-      image: "",
+      imageUrl: "",
       email: "", 
       campusId: null,
       gpa: null, 
@@ -43,7 +43,7 @@ class NewStudentContainer extends Component {
     let student = {
         firstname: this.state.firstname,
         lastname: this.state.lastname,
-        image: this.state.image,
+        imageUrl: this.state.imageUrl,
         email: this.state.email,
         campusId: this.state.campusId,
         gpa: this.state.gpa,
@@ -56,7 +56,7 @@ class NewStudentContainer extends Component {
     this.setState({
       firstname: "", 
       lastname: "",
-      image: "",
+      imageUrl: "",
       email: "", 
       campusId: null, 
       gpa: null,

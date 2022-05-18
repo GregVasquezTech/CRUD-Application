@@ -35,7 +35,8 @@ const useStyles = makeStyles( () => ({
 }));
 
 const EditCampusView = (props) => {
-  const {handleChange, handleSubmit } = props;
+  const {handleChange, handleSubmit} = props;
+  const {campus} = props;
   const classes = useStyles();
 
   // Render an Edit Campus view with an input form
@@ -47,12 +48,17 @@ const EditCampusView = (props) => {
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
             <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-              Edit this campus.
+              Edit {campus.name}
             </Typography>
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>Name: </label>
-            <input placeholder='name' type="text" name="name" onChange ={(e) => handleChange(e)} />
+            <input placeholder='name' defaultValue={campus.name} type="text" name="name" onChange ={(e) => handleChange(e)} />
+            <br/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Image: </label>
+            <input placeholder='imageUrl' type="text" name="imageUrl" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 

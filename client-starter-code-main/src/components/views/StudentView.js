@@ -12,7 +12,7 @@ const StudentView = (props) => {
     <div>
       <h1>{student.image}</h1>
       <h1>{student.firstname + " " + student.lastname}</h1>
-      <img src={student.image} />
+      <img src={student.imageUrl} />
       <h3>Student at {student.campus.name}</h3>
       <h3>email: {student.email}</h3>
       <h3>gpa: {student.gpa}</h3>
