@@ -15,7 +15,7 @@ const CampusView = (props) => {
     studentStatus = <p>There are no students in {campus.name}</p>
   }
   else {
-    studentStatus = <p>Student Status:</p>
+    studentStatus = <p>Here are all the students in {campus.name}:</p>
   }
   
   // Render a single Campus view with list of its students
@@ -31,7 +31,7 @@ const CampusView = (props) => {
         return (
           <div key={student.id}>
             <Link to={`/student/${student.id}`}>
-              <h2>{name}</h2>
+            <img style={{"width": "100px", "height": "100px"}} src={student.imageUrl}/><h2>{name}</h2>
             </Link>             
           </div>
         );

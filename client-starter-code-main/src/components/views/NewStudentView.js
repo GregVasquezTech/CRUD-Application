@@ -61,11 +61,6 @@ const NewStudentView = (props) => {
             <br/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Image: </label>
-            <input placeholder='imageUrl' type="text" name="imageUrl" onChange={(e) => handleChange(e)} />
-            <br/>
-            <br/>
-
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
             <input placeholder='email' type="text" name="email" onChange={(e) => handleChange(e)} />
             <br/>
@@ -78,6 +73,11 @@ const NewStudentView = (props) => {
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
             <input placeholder='gpa' type="text" name="gpa" onChange={(e) => handleChange(e)} />
+            <br/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Image: </label>
+            <input placeholder='imageUrl' type="text" name="imageUrl" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 

@@ -56,11 +56,6 @@ const EditCampusView = (props) => {
             <br/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Image: </label>
-            <input placeholder='imageUrl' type="text" name="imageUrl" onChange={(e) => handleChange(e)} />
-            <br/>
-            <br/>
-
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Address: </label>
             <input placeholder={campus.address} defaultValue={campus.address} type="text" name="address" onChange={(e) => handleChange(e)} />
             <br/>
@@ -68,6 +63,11 @@ const EditCampusView = (props) => {
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
             <input placeholder={campus.description} defaultValue={campus.description} type="text" name="description" onChange={(e) => handleChange(e)} />
+            <br/>
+            <br/>
+
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Image: </label>
+            <input placeholder='imageUrl' type="text" name="imageUrl" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
