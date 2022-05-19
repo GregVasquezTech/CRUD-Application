@@ -59,7 +59,6 @@ class EditCampusContainer extends Component {
     
     // Edits existing campus in back-end database
     let campus = await this.props.editCampus(this.state);
-    console.log(campus.id);
   }
 
   // Unmount when the component is being removed from the DOM:
@@ -71,7 +70,7 @@ class EditCampusContainer extends Component {
   render() {
     // Redirect to the campus's page after submit
     if(this.state.redirect) {
-        return (<Redirect to={`/campus/${this.state.redirectId}`}/>)
+        return (<Redirect to={`/campus/`}/>)
       }
     // Display the input form via the corresponding View component
     return (

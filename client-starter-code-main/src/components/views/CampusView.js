@@ -9,6 +9,14 @@ import { Link } from "react-router-dom";
 // Take in props data to construct the component
 const CampusView = (props) => {
   const {campus} = props;
+
+  let studentStatus;
+  if (campus.students.length === 0) {
+    studentStatus = <p>There are no students in {campus.name}</p>
+  }
+  else {
+    studentStatus = <p>Student Status:</p>
+  }
   
   // Render a single Campus view with list of its students
   return (
@@ -17,6 +25,7 @@ const CampusView = (props) => {
       <img src={campus.imageUrl} alt=""/>
       <p>{campus.address}</p>
       <p>{campus.description}</p>
+      {studentStatus}
       {campus.students.map( student => {
         let name = student.firstname + " " + student.lastname;
         return (
@@ -26,7 +35,8 @@ const CampusView = (props) => {
             </Link>             
           </div>
         );
-      })}
+      })
+      }
     </div>
   );
 };
