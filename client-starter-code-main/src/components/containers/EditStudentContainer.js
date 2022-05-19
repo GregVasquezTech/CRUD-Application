@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import EditStudentView from '../views/EditStudentView';
-import { editStudentThunk } from '../../store/thunks';
+import { fetchStudentThunk, editStudentThunk } from '../../store/thunks';
 
 class EditStudentContainer extends Component {
   // Initialize state
@@ -23,16 +23,29 @@ class EditStudentContainer extends Component {
       imageUrl: "",
       email: "", 
       campusId: null,
-      gpa: null, 
+      gpa: null,
+      id: null, 
       redirect: false, 
-      id: null
+      redirectId: null
     };
   }
+
+//   componentDidMount() {
+//     this.setState({
+//         firstname: this.props.student.firstname,
+//         lastname: this.props.student.lastname,
+//         email: this.props.student.email,
+//         imageUrl: this.props.student.imageUrl,
+//         gpa: this.props.student.gpa,
+//         campusId: this.props.student.campusId,
+//         id: this.props.student.id
+//     })
+//   }
 
   // Capture input data when it is entered
   handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   }
 
@@ -40,29 +53,31 @@ class EditStudentContainer extends Component {
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
-    let student = {
+    // Updating information.
+    let changestudent = {
         firstname: this.state.firstname,
         lastname: this.state.lastname,
         imageUrl: this.state.imageUrl,
         email: this.state.email,
         campusId: this.state.campusId,
         gpa: this.state.gpa,
+        id: this.state.id,
     };
     
     // Add edit student in back-end database
-    let editStudent = await this.props.editStudent(student);
+    let editstudent = await this.props.editStudent(changestudent);
+    console.log(editstudent)
 
-    // Update state, and trigger redirect to show the editing student
     this.setState({
-      firstname: "", 
-      lastname: "",
-      imageUrl: "",
-      email: "", 
-      campusId: null, 
-      gpa: null,
-      redirect: true, 
-      id: editStudent.id
-    });
+        firstname: "", 
+        lastname: "",
+        imageUrl: "",
+        email: "", 
+        campusId: null,
+        gpa: null, 
+        id: null,
+    })
+
   }
 
   // Unmount when the component is being removed from the DOM:
@@ -83,7 +98,8 @@ class EditStudentContainer extends Component {
         <Header />
         <EditStudentView 
           handleChange = {this.handleChange} 
-          handleSubmit={this.handleSubmit}      
+          handleSubmit={this.handleSubmit} 
+          student={this.props.student}     
         />
       </div>          
     );
@@ -95,6 +111,7 @@ class EditStudentContainer extends Component {
 // The "mapDispatch" calls the specific Thunk to dispatch its action. The "dispatch" is a function of Redux Store.
 const mapDispatch = (dispatch) => {
     return({
+        fetchStudent: (id) => dispatch(fetchStudentThunk(id)),
         editStudent: (student) => dispatch(editStudentThunk(student)),
     })
 }
