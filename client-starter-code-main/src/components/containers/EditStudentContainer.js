@@ -8,13 +8,25 @@ If needed, it also defines the component's "connect" function.
 import Header from './Header';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { Redirect } from 'react-router-dom';
 import EditStudentView from '../views/EditStudentView';
 import { fetchStudentThunk, editStudentThunk } from '../../store/thunks';
 
 class EditStudentContainer extends Component {
   // Initialize state
-
+  constructor(props){
+    super(props);
+    this.state = {
+      firstname: "", 
+      lastname: "",
+      imageUrl: "",
+      email: "", 
+      campusId: null,
+      gpa: null, 
+      redirect: false, 
+      redirectId: null
+    };
+  }
   componentDidMount() {
       this.props.fetchStudent(this.props.match.params.id)
   }
@@ -23,6 +35,7 @@ class EditStudentContainer extends Component {
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value,
+      id: this.props.match.params.id,
     });
   }
 
@@ -31,39 +44,32 @@ class EditStudentContainer extends Component {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
     // Updating information.
-    let changestudent = {
+    this.setState({
         firstname: this.state.firstname,
         lastname: this.state.lastname,
-        imageUrl: this.state.imageUrl,
         email: this.state.email,
-        campusId: this.state.campusId,
+        imageUrl: this.state.imageUrl,
         gpa: this.state.gpa,
         id: this.props.match.params.id,
-    };
+        redirect: true,
+    })
     
     // Add edit student in back-end database
-    let editstudent = await this.props.editStudent(changestudent);
+    let editstudent = await this.props.editStudent(this.state);
     console.log(editstudent)
-
-    this.setState({
-        firstname: "", 
-        lastname: "",
-        imageUrl: "",
-        email: "", 
-        campusId: null,
-        gpa: null, 
-        id: this.props.match.params.id,
-        
-    })
-
   }
 
   // Unmount when the component is being removed from the DOM:
-
+  componentWillUnmount() {
+    this.setState({redirect: false, redirectId: null});
+}
   // Render editing student input form
   render() {
     // Redirect to the student's page after submit
-
+    if(this.state.redirect) {
+        return (<Redirect to={`/students`}/>)
+        window.location.reload();
+      }
     // Display the input form via the corresponding View component
     return (
       <div>

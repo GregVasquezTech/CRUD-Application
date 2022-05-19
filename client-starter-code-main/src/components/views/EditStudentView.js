@@ -7,7 +7,6 @@ It constructs a React component to display the edit student page.
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Redirect } from 'react-router-dom';
 
 // Create styling for the input form
 const useStyles = makeStyles( () => ({
@@ -82,7 +81,7 @@ const EditStudentView = (props) => {
             <br/>
             <br/>
 
-            <Button onClick={<Redirect to={`/student/${student.id}`}/>} variant="contained" color="primary" type="submit">
+            <Button variant="contained" color="primary" type="submit">
               Save Edit
             </Button>
             <br/>

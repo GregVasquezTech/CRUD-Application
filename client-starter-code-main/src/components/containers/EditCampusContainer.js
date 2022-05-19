@@ -15,6 +15,17 @@ import { fetchCampusThunk, editCampusThunk } from '../../store/thunks';
 
 class EditCampusContainer extends Component {
   // Initialize state
+  constructor(props){
+    super(props);
+    this.state = {
+      name: "", 
+      address: "", 
+      description: "", 
+      imageUrl: "",
+      redirect: false, 
+      redirectId: null
+    };
+  }
 
   componentDidMount() {
       this.props.fetchCampus(this.props.match.params.id)
@@ -24,6 +35,7 @@ class EditCampusContainer extends Component {
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value,
+      id: this.props.match.params.id
     });
   }
 
@@ -42,6 +54,7 @@ class EditCampusContainer extends Component {
     
     // Edits existing campus in back-end database
     let campus = await this.props.editCampus(this.state);
+    console.log(campus)
   }
 
   // Unmount when the component is being removed from the DOM:
@@ -52,7 +65,9 @@ class EditCampusContainer extends Component {
   // Render edit campus input form
   render() {
     // Redirect to the campus's page after submit
-    <Redirect to={`/campus/${this.props.match.params.id}`}/>
+    if(this.state.redirect) {
+        return (<Redirect to={`/campus/${this.state.redirectId}`}/>)
+    }
     // Display the input form via the corresponding View component
     return (
       <div>
