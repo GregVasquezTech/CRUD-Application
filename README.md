@@ -19,11 +19,11 @@ After it is done downloading, run npm start.
 
 As a user, I:
 - [X] will land on a visually pleasing home page by default, which allows navigation to view all campuses and all students
---- [X] can navigate to all-campuses view, and
---- [X] see a list of all campuses in the database
---- [X] see an informative message if no campuses exist
---- [X] add a new campus
------ [X] with a validated form displaying real-time error messages
+-   [X] can navigate to all-campuses view, and
+-   [X] see a list of all campuses in the database
+-   [X] see an informative message if no campuses exist
+-   [X] add a new campus
+-     [X] with a validated form displaying real-time error messages
 - [X] can navigate to a single-campus view, and
 --- [X] see details about a single campus, including enrolled students (if any)
 --- [X] see an informative message if no students are enrolled at that campus
