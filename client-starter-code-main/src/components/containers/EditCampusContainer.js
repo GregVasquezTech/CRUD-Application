@@ -15,27 +15,10 @@ import { fetchCampusThunk, editCampusThunk } from '../../store/thunks';
 
 class EditCampusContainer extends Component {
   // Initialize state
-  constructor(props){
-    super(props);
-    this.state = {
-      name: "", 
-      address: "", 
-      description: "", 
-      imageUrl: "",
-      redirect: false, 
-      id: null
-    };
-  }
 
-//   componentDidMount() {
-//       this.setState({
-//           name: this.props.campus.name,
-//           address: this.props.campus.address,
-//           description: this.props.campus.description,
-//           imageUrl: this.props.campus.imageUrl,
-//           id: this.props.campus.id
-//       })
-//   }
+  componentDidMount() {
+      this.props.fetchCampus(this.props.match.params.id)
+  }
 
   // Capture input data when it is entered
   handleChange = event => {
@@ -53,7 +36,7 @@ class EditCampusContainer extends Component {
         address: this.state.address,
         description: this.state.description,
         imageUrl: this.state.imageUrl,
-        id: this.state.id,
+        id: this.props.match.params.id,
         redirect: true,
     })
     
@@ -69,9 +52,7 @@ class EditCampusContainer extends Component {
   // Render edit campus input form
   render() {
     // Redirect to the campus's page after submit
-    if(this.state.redirect) {
-        return (<Redirect to={`/campus/`}/>)
-      }
+    <Redirect to={`/campus/${this.props.match.params.id}`}/>
     // Display the input form via the corresponding View component
     return (
       <div>
@@ -84,6 +65,12 @@ class EditCampusContainer extends Component {
       </div>          
     );
   }
+}
+
+const mapState = (state) => {
+    return {
+        campus: state.campus,
+    }
 }
 
 // The following input argument is passed to the "connect" function used by "EditCampusContainer" component to connect to Redux Store.
@@ -99,4 +86,4 @@ const mapDispatch = (dispatch) => {
 // Export store-connected container by default
 // EditCampusContainer uses "connect" function to connect to Redux Store and to read values from the Store 
 // (and re-read the values when the Store State updates).
-export default connect(null, mapDispatch)(EditCampusContainer);
+export default connect(mapState, mapDispatch)(EditCampusContainer);

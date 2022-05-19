@@ -7,6 +7,7 @@ It constructs a React component to display the edit student page.
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { Redirect } from 'react-router-dom';
 
 // Create styling for the input form
 const useStyles = makeStyles( () => ({
@@ -47,17 +48,17 @@ const EditStudentView = (props) => {
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
             <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
-              Edit Student
+              Edit {student.firstname + " " + student.lastname}
             </Typography>
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-            <input placeholder='first name' type="text" name="firstname" onChange ={(e) => handleChange(e)} />
+            <input placeholder={student.firstname} defaultValue={student.firstname} type="text" name="firstname" onChange ={(e) => handleChange(e)} />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-            <input placeholder='last name' type="text" name="lastname" onChange={(e) => handleChange(e)} />
+            <input placeholder={student.lastname} defaultValue={student.lastname} type="text" name="lastname" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
@@ -67,21 +68,21 @@ const EditStudentView = (props) => {
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
-            <input placeholder='email' type="text" name="email" onChange={(e) => handleChange(e)} />
+            <input placeholder={student.email} defaultValue={student.email} type="text" name="email" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Id: </label>
-            <input placeholder='campus id' type="text" name="campusId" onChange={(e) => handleChange(e)} />
+            <input placeholder={student.campusId} defaultValue={student.campusId} type="text" name="campusId" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
-            <input placeholder='gpa' type="text" name="gpa" onChange={(e) => handleChange(e)} />
+            <input placeholder={student.gpa} defaultValue={student.gpa} type="text" name="gpa" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
-            <Button variant="contained" color="primary" type="submit">
+            <Button onClick={<Redirect to={`/student/${student.id}`}/>} variant="contained" color="primary" type="submit">
               Save Edit
             </Button>
             <br/>

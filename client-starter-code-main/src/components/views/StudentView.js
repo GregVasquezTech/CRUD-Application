@@ -12,7 +12,7 @@ const StudentView = (props) => {
   // Render a single Student view 
   return (
     <div>
-      <img src={student.imageUrl} alt=""/>
+      <img style={{"width" : "200px", "height" : "200px"}} src={student.imageUrl} alt=""/>
       <h1>{student.firstname + " " + student.lastname}</h1>
       <h2>Student at {student.campus.name}</h2>
       {student.campus === "" ? 
