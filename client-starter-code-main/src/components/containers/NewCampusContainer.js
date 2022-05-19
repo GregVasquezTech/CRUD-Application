@@ -68,7 +68,7 @@ class NewCampusContainer extends Component {
   render() {
     // Redirect to new campus's page after submit
     if(this.state.redirect) {
-      return (<Redirect to={`/student/${this.state.redirectId}`}/>)
+      return (<Redirect to={`/campus/${this.state.redirectId}`}/>)
     }
 
     // Display the input form via the corresponding View component
