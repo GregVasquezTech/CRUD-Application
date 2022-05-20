@@ -1,7 +1,8 @@
 # client-starter-code
 
 # Created By:
-Gregory Vasquez
+## Gregory Vasquez 
+### Ephraim Picker
 
 This repository is the client (front-end) starter code for Final Project (CRUD Application).
 
