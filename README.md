@@ -1,7 +1,8 @@
 # CRUD-Application
 
 # Created By: 
-Gregory Vasquez
+## Gregory Vasquez
+### Ephraim Picker
 
 # Instructions:
 First, change directory to the server-starter-code. 
