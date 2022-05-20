@@ -1,4 +1,7 @@
 # server-starter-code
+# Created by: 
+## Gregory Vasquez
+### Ephraim Picker
 
 This repository is the server (back-end) starter code for Final Project (CRUD Application).
 
